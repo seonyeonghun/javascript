@@ -17,6 +17,7 @@ let e = false; // boolean
 let f = null;  // NULL
 
 let g;     // Undefined (변수는 선언했지만, 값을 대입/할당하지 않은 상태)
+console.log("g의 자료형 : "+g);
 
 let h = [1,2,3];   // Array     ,  Array()
 
@@ -29,7 +30,7 @@ let j = function() {   // function
     console.log('hello javascript world!');
 }
 
-k = 100;
+let k = 100;
 console.log(k);
 
 var kk = 1000;
