@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 문법</title>
+    <title>제이쿼리</title>
+    <style>
+    div#displayArea {
+        width: 200px;
+        height: 200px;
+        border: 5px double #6699FF
+    }        
+    </style>
 </head>
 <body>
-    <h1>변수</h1>
-    <script src="variables.js"></script>
+    <h1>제이쿼리를 이용한 태그제어(p.468)</h1>
+    <!-- 3. p.469 HTML을 보면서 작성-->
+    <div id="displayArea">이곳의 내용 변경</div>
+    <button type="button">표시</button>    
+    
+    <!-- 4. 자바스크립트로만 해결 vs jQuery 비교! -->
+    <script>
+    // 표시 버튼을 누르면, #displayArea에 이미지를 출력한다.
+    // $ : jQuery에서 DOM 요소를 선택하는 기호 ( 대신 jQuery 라는 식별자 사용가능 )
+    const Button = document.querySelector("button");   // $("button")
+    Button.addEventListener("click", function(){    // .click()
+        const displayArea = document.querySelector("#displayArea");
+        displayArea.innerHTML = "<img src=\"https://picsum.photos/200\" alt=\"그림\">";
+    });
+    </script>
 </body>
 </html>
