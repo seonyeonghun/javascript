@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 이벤트(p.483)</title>
+    <script src="lib/jquery-3.6.1.js"></script>
+    <style>
+        #plane {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>p.484 jquery를 사용한 자바스크립트 사용??</h1>
+    <p id="p1">아무키나 누르세요</p>
+    <div id="plane">
+        <img src="plane-removebg-preview.png" alt="갤러그">
+    </div>
+    <script>
+        $(function(){
+            $(document).keydown(function(e){ // 웹페이지에서 키보드를 눌렀다가 떼면 발생
+                if(e.keyCode === 39) { // 오른쪽
+                    $("#plane").css("right","-=10"); // right += 1; // right = right + 1;
+                    //js :  document.querySelector("#plane").style.right+=1
+                } else if(e.keyCode === 37) {
+                    $("#plane").css("right","+=10"); // right += 1; // right = right + 1;                    
+                } else if(e.keyCode === 38) {
+                    $("#plane").css("top","-=10"); // right += 1; // right = right + 1;                                        
+                } else if(e.keyCode === 40) {
+                    $("#plane").css("top","+=10"); // right += 1; // right = right + 1;                                        
+                } else if(e.keyCode == 39 && e.keyCode === 38) {
+                    console.log("우상단?")
+                }
+            })
+        })
+    </script>
+</body>
+</html>
