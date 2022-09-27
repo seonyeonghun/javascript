@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jquery</title>
-    <!-- <script src="lib/jquery-3.6.1.js"></script> -->
+    <script src="lib/jquery-3.6.1.js"></script>
 </head>
 <body>
     <h1>폼 이벤트</h1>
@@ -30,15 +30,28 @@
     </form>
 
     <script>
+        /*
         const myForm = document.querySelector("#my-form");
         const sendBt = document.querySelector("#sendBt");
         myForm.addEventListener("submit", function(e){
             e.preventDefault(); // 페이지 새로고침 안함
             console.log("submit 이벤트 금지!")         
         })
+        */
 
+        $(function(){
+            // change 이벤트 : 폼 엘리먼트가 변경될때 발생(ex. 검색창 + 검색어!)
+            $("#idx").change(function(e){
+                console.log("사용자 입력값 : "+e.target.value);
+            });
+            $("#name").keypress(function(e){
+                let inputValue = e.target.value;
+                if(inputValue.length > 10) {
+                    alert("10자 이상 입력했습니다")
+                };
+                console.log("사용자 입력값 : "+inputValue);
 
-        // $(function(){
+            })
         //     // 전송시 form 새로고침 : default --> forbidden
         //     // 사용자 정보 객체 ==> 서버로 전송할 데이터!
         //     const userInfo = {};
@@ -61,7 +74,7 @@
         //         console.log("blur 발생!")
         //         $(this).css("background-color", "#ffffff");
         //     })
-        // })
+         })
     </script>
 </body>
 </html>
